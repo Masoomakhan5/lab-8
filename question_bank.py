@@ -1,6 +1,6 @@
 #---------------------------------------
 #  Question Bank
-#    Student B
+#    Student b MASOOMA KHAN 
 #---------------------------------------
 import random
 # Simplified example with one category. Expand as needed.
@@ -33,9 +33,9 @@ def select_random_question(category):
     """
     if category in questions:
         question, answer = random.choice(questions[category])
-        return question, answer
+        return question,answer
     else:
-        return "Category not found", ""
+        return "Category not found, "
 
 #---------------------------------------
 
@@ -52,9 +52,9 @@ def check_answer(player_answer, correct_answer):
     """
     #------------------------
     if player_answer.lower() == correct_answer.lower():
-        return True  
+        return True
     else:
-        return False 
+        return False
     #------------------------
 
 #---------------------------------------
@@ -70,7 +70,7 @@ def remove_question(category, question):
     Returns:
     - None
     """
-    if category in questions: 
+    if category in question: 
         for q, a in questions[category]:  
             if q == question:  
                 questions[category].remove((q, a))  
@@ -94,8 +94,8 @@ def display_question_and_accept_answer(question):
     - str: The player's answer to the question.
     """
     #------------------------
-    print(question)  
-    player_answer = input("Your answer: ") 
+    print(question)
+    player_answer = input("your answer")
     return player_answer
 
    
@@ -113,16 +113,16 @@ def provide_hint(category, question):
     - str: The hint for the given question.
     """
     #------------------------
-    if category == "Science" and question == "What is the chemical symbol for water?":
-        return "Hint: It's made up of hydrogen and oxygen."
+    if category == "science" and question == "what is water made of?":
+        return "hint: it is made of hydrogen and oxygen"
     
-    if category == "Math" and question == "What is 2 + 2?":
-        return "Hint: It's a basic addition of two numbers."
+    if category == "maths" and question == "what is 1 + 1?":
+        return "Hint: it is additon of two numbers"
 
-    if category == "History" and question == "Who was the first U.S. president?":
-        return "Hint: He is often called the Father of the Nation."
+    if category == "history" and question == "who was prime minister os pakistan?":
+        return "Hint: he is in jail now"
     
-    return "No hint available for this question."
+    return "no hints avaliable"
     #------------------------
 
 #---------------------------------------
@@ -138,8 +138,7 @@ def display_correct_answer(correct_answer):
     - None
     """
     #------------------------
-    print("The correct answer is:", correct_answer)
-    #------------------------
+    print("the correct answer is:", correct_answer)
 
 
 
