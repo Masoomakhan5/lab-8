@@ -1,9 +1,8 @@
-
 #---------------------------------------
 
 #---------------------------------------
 #  Game Mechanics
-#    Student A (team lead)
+#    Student A (team lead) MASOOMA KHAN
 #---------------------------------------
 
 def welcome_message():
@@ -14,13 +13,13 @@ def welcome_message():
     Returns: None
     """
     #------------------------
-    print("=====================================")
-    print("       Greetings, brave traveler!     ")
-    print("  Your quest begins in a land unknown ")
-    print("     Face trials and seek victory!    ")
-    print("=====================================")
-    #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+    print(" ============ ")
+    print(" hello player" )
+    print(" your game begins now" )
+    print(" solve mazes and win game ")
+    print(" ============ ")
+    
+    
     #------------------------
 #---------------------------------------
     
@@ -37,19 +36,19 @@ def choose_category(categories):
     #------------------------
     print("Choose a category:")
 
-    for i in range(len(categories)):
+    for i in range (len(categories)):
         print(str(i + 1) + ". " + categories[i])
 
     while True:
-        choice_str = input("Enter the number of your choice: ")
+        choice_str = input("enter a name ")
         if choice_str.isdigit():
             choice_num = int(choice_str)
             if 1 <= choice_num <= len(categories):
                 return categories[choice_num - 1]
             else:
-                print("That number is not in the list. Try again.")
+                print("the nummber is not in list, try again")
         else:
-            print("Please enter a number.")
+            print("enter a number")
     #------------------------
 
 #---------------------------------------
@@ -66,11 +65,11 @@ def display_score(score, round_number):
     """
     #------------------------
     print("----------")
-    print("Round:", round_number)
-    print("Score:", score)
+    print("round", round_number)
+    print("score", score)
     print("----------")
     #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+    
     #------------------------
 
 #---------------------------------------
@@ -85,13 +84,13 @@ def game_over_message(final_score):
     Returns: None
     """
     #------------------------
-    print("==============================")
-    print("        Game Over!            ")
-    print("Thanks for playing with us.")
+    print("==========")
+    print(" Game Over ")
+    print("thanks for playing")
     print("Your final score is:", final_score)
     print("==============================")
     #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+
     #------------------------
 
 #---------------------------------------
@@ -126,7 +125,7 @@ def run_game_rounds(categories):
 
     game_over_message(score)
     #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+    r
     #------------------------
 
 #---------------------------------------
@@ -169,6 +168,7 @@ def update_score(score, correct):
         score += 1  
     return score
 
+#---------------------------------------
 
 def check_game_over(incorrect_answers):
     """
@@ -199,11 +199,12 @@ def restart_or_exit():
     player_choice = input("Would you like to play again? (yes/no): ").lower()
 
     if player_choice == "yes":
-        print("Starting a new game...")
+        print("start a new game")
         
     elif player_choice == "no":
-        print("Goodbye! Hope to see you again.")
+        print("goodbye! go to hell")
         
     else:
-        print("Please enter 'yes' or 'no'.")
+        print("pleasse enter 'yes' or 'no'")
         restart_or_exit() 
+
