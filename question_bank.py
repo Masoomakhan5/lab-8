@@ -2,22 +2,21 @@
 #  Question Bank
 #    Student B
 #---------------------------------------
-
 import random
-
 # Simplified example with one category. Expand as needed.
 questions = {
     "Science": [
         ("What is the chemical symbol for water?", "H2O"),
         # Add more questions as tuples (question, answer)
     ],
-}
-
-hints = {
-    "Science": [
-        # Pair each question with a corresponding hint.
+    "Math": [
+        ("What is 2 + 2?", "4"),
+        ("What is 3 + 5?", "8"),
     ],
-    # Repeat for other categories as needed.
+    "History": [
+        ("Who was the first U.S. president?", "George Washington"),
+        ("When did World War II end?", "1945"),
+    ],
 }
 
 #---------------------------------------
@@ -32,11 +31,11 @@ def select_random_question(category):
     Returns:
     - tuple: A tuple containing the selected question (str) and its corresponding answer (str).
     """
-    #------------------------
-    # Add your code here
-    #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
-    #------------------------
+    if category in questions:
+        question, answer = random.choice(questions[category])
+        return question, answer
+    else:
+        return "Category not found", ""
 
 #---------------------------------------
 
@@ -52,9 +51,10 @@ def check_answer(player_answer, correct_answer):
     - bool: True if the answers match, False otherwise.
     """
     #------------------------
-    # Add your code here
-    #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+    if player_answer.lower() == correct_answer.lower():
+        return True  
+    else:
+        return False 
     #------------------------
 
 #---------------------------------------
@@ -70,10 +70,15 @@ def remove_question(category, question):
     Returns:
     - None
     """
-    #------------------------
-    # Add your code here
-    #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+    if category in questions: 
+        for q, a in questions[category]:  
+            if q == question:  
+                questions[category].remove((q, a))  
+                print(f"The question '{question}' has been removed.")
+                return  
+        print("Question not found.")
+    else:
+        print("Category not found.")
     #------------------------
 
 #---------------------------------------
@@ -89,11 +94,11 @@ def display_question_and_accept_answer(question):
     - str: The player's answer to the question.
     """
     #------------------------
-    # Add your code here
-    #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
-    #------------------------
+    print(question)  
+    player_answer = input("Your answer: ") 
+    return player_answer
 
+   
 #---------------------------------------
 
 def provide_hint(category, question):
@@ -108,9 +113,16 @@ def provide_hint(category, question):
     - str: The hint for the given question.
     """
     #------------------------
-    # Add your code here
-    #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+    if category == "Science" and question == "What is the chemical symbol for water?":
+        return "Hint: It's made up of hydrogen and oxygen."
+    
+    if category == "Math" and question == "What is 2 + 2?":
+        return "Hint: It's a basic addition of two numbers."
+
+    if category == "History" and question == "Who was the first U.S. president?":
+        return "Hint: He is often called the Father of the Nation."
+    
+    return "No hint available for this question."
     #------------------------
 
 #---------------------------------------
@@ -126,12 +138,8 @@ def display_correct_answer(correct_answer):
     - None
     """
     #------------------------
-    # Add your code here
+    print("The correct answer is:", correct_answer)
     #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
-    #------------------------
-
-#---------------------------------------
 
 
 
